@@ -23,6 +23,7 @@
 
 	<div class="container-fluid">
 		<div class="row row-centered">
+			<div class="col-xs-2 col-centered"><img id="0" class=img-responsive src="images/qmark.jpg"></div>
 			<div class="col-xs-2 col-centered"><img id="1" class=img-responsive src="images/qmark.jpg"></div>
 			<div class="col-xs-2 col-centered"><img id="2" class=img-responsive src="images/qmark.jpg"></div>
 			<div class="col-xs-2 col-centered"><img id="3" class=img-responsive src="images/qmark.jpg"></div>
@@ -42,14 +43,13 @@
 			<div class="col-xs-2 col-centered"><img id="17" class=img-responsive src="images/qmark.jpg"></div>
 			<div class="col-xs-2 col-centered"><img id="18" class=img-responsive src="images/qmark.jpg"></div>
 			<div class="col-xs-2 col-centered"><img id="19" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="20" class=img-responsive src="images/qmark.jpg"></div>
 		</div>
 	</div>
 	<h6>R E S H U F F L E</h6>
 	<hr>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	<script type="text/javascript">
+	<script type="text/javascript" language="javascript">
 		
 		var images = ["bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg", "bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg"];
 
@@ -69,7 +69,17 @@
 			return array;
 		};
 
+		function refresh(){
+			var shuffled = shuffle(images);
+			for (var i = 0; i < images.length ; i++){
+				var id = ""+i;
+				element = document.getElementById(id);
+				element.src = "images/"+shuffled[i];
+			}
+		}
+
 		function flipTile (){
+		
 			var maxClicks = 2;
 
 		};
@@ -77,8 +87,14 @@
 		function isMatch(){
 
 		};
+	
 
-
+		// $(document).ready(function(event){
+		// 	$('h6').click(function(){
+		// 		event.preventDefault();
+		// 		refresh();
+		// 	})
+		// })
 
 
 	</script>
