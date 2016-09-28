@@ -17,32 +17,32 @@
 
 <body>
 	<header>
-		<h1>Your Memory Stinks</h1>
+		<h1>Your Memory <span>Stinks</span></h1>
 		<hr>
 	</header>
 	<h6>N E W _ G A M E</h6>
 	<div class="container-fluid">
 		<div class="row row-centered">
-			<div class="col-xs-2 col-centered"><img id="0" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="1" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="2" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="3" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="4" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="5" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="6" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="7" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="8" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="9" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="10" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="11" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="12" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="13" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="14" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="15" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="16" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="17" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="18" class=img-responsive src="images/qmark.jpg"></div>
-			<div class="col-xs-2 col-centered"><img id="19" class=img-responsive src="images/qmark.jpg"></div>
+			<div class="col-xs-2 col-centered"><img id="0" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="1" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="2" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="3" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="4" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="5" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="6" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="7" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="8" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="9" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="10" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="11" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="12" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="13" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="14" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="15" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="16" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="17" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="18" class=img-responsive src=""></div>
+			<div class="col-xs-2 col-centered"><img id="19" class=img-responsive src=""></div>
 		</div>
 	</div>
 	<hr>
@@ -51,8 +51,10 @@
 	<script type="text/javascript" language="javascript">
 		
 		var images = ["bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg", "bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg"];
-		var counter = [];
+		var isMatch = [];
+		var counter = 0;
 		var matches = 0;
+		var scores = {};
 
 		// Knuth shuffle http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 		function shuffle (array) {
@@ -77,12 +79,11 @@
 				var element = document.getElementById(id);
 				element.src = "images/"+shuffled[i];
 			}
+			matches=0;
+			counter=0;
+			console.log("New Game");
 		}
 
-		function isMatch(){
-
-		};
-	
 		$(document).ready(function(){
 			$('h6').click(function(event){
 				event.preventDefault();
@@ -92,29 +93,32 @@
 		})
 
 		$('img').click(function(){
-			console.log(this.src);
-			counter.unshift(this);
-			$('#'+counter[0].id).animate({opacity: 100});
-			if (counter[0].src == counter[1].src && counter[0] != counter [1]) {
-				console.log("MATCH!", counter[0].id, counter[1].id);
-				$('#'+counter[0].id).animate({opacity: 100});
-				$('#'+counter[1].id).animate({opacity: 100});
-				counter=[];
+			counter++;
+			console.log(counter);
+			isMatch.unshift(this);
+			$('#'+isMatch[0].id).animate({opacity: 100});
+			if (isMatch[0].src == isMatch[1].src && isMatch[0] != isMatch [1]) {
+				console.log("MATCHES LEFT: ", 9-matches);
+				$('#'+isMatch[0].id).animate({opacity: 100});
+				$('#'+isMatch[1].id).animate({opacity: 100});
+				isMatch=[];
 				matches++;
 				if (matches == 10){
-					alert("You win!");
+					alert("You win! Your score is: "+counter);
+					var session = document.cookie;
+					scores[session] = counter;
 					matches=0;
+					counter=0;
+					setTimeout(refresh(),3000);
+					$('img').animate({opacity: 0});
+
 				}
 			} else {
-				$('#'+counter[0].id).animate({opacity: 0});
-				$('#'+counter[1].id).animate({opacity: 0});
-				counter=[];
+				$('#'+isMatch[0].id).animate({opacity: 0});
+				$('#'+isMatch[1].id).animate({opacity: 0});
+				isMatch=[];
 			}
 		})
-
-
-
-
 	</script>
 </body>
 </html>

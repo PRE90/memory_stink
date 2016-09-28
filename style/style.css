@@ -1,10 +1,19 @@
 body {
-	background-color: black;
+	background-color: #1F2629;
 }
 
 h1, h6 {
 	color: white;
 	text-align: center;
+}
+
+hr {
+	color: #F5F5F6;
+	background-color: #F5F5F6;
+}
+
+span {
+	color: #FE6B88;
 }
 
 h6:hover {
@@ -18,7 +27,6 @@ img {
     min-height: 100%;
     min-width: 100%;
 }
-
 
 .row {
 	margin-left: auto;
@@ -36,17 +44,17 @@ img {
 
 .col-xs-2 {
 	width: 18vw;
-	height: 21vh;
+	height: 20vh;
     overflow: hidden;
     margin: 0px;
     padding: 0px;
-    border-color: white;
-    border-style: outset;
-    border-width: 1px;
+    border-color: #1F2629;
+	border-style: solid;
+	border-width: 2px;
 }
 
 .col-xs-2:hover {
-	border-color: gray;
-	border-style: inset;
-	border-width: 1px;
+	border-color: #FE6B88;
+	border-style: solid;
+	border-width: 2px;
 }
