@@ -1,0 +1,48 @@
+body {
+	background-color: black;
+	justify-content: center;
+
+}
+
+h1 {
+	color: white;
+	text-align: center;
+}
+
+img {
+	object-fit: cover;
+	margin: auto; 
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.row {
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	height: 105vh;
+}
+
+.col-xs-2 {
+	width: 20%;
+	height: 20%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.col-sm-2 {
+	width: 20%;
+	height: 20%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.col-md-2 {
+	width: 20%;
+	height: 20%;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
