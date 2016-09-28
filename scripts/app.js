@@ -1,0 +1,1 @@
+var images = ["bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg", "bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg"];
