@@ -51,6 +51,8 @@
 	<script type="text/javascript" language="javascript">
 		
 		var images = ["bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg", "bison.jpg", "cat.jpg", "dog.jpg", "dolphin.jpg", "harambe.jpg", "horse.jpg", "kangaroo.jpg", "penguin.jpg", "sloth.jpg", "toucan.jpg"];
+		var counter = [];
+		var matches = 0;
 
 		// Knuth shuffle http://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 		function shuffle (array) {
@@ -85,15 +87,28 @@
 			$('h6').click(function(event){
 				event.preventDefault();
 				refresh();
+				$('img').animate({opacity: 0});
 			});
 		})
 
 		$('img').click(function(){
-			var counter = [];
 			console.log(this.src);
 			counter.unshift(this);
-			if (counter[0] == counter[1]) {
-				console.log(this.id)
+			$('#'+counter[0].id).animate({opacity: 100});
+			if (counter[0].src == counter[1].src && counter[0] != counter [1]) {
+				console.log("MATCH!", counter[0].id, counter[1].id);
+				$('#'+counter[0].id).animate({opacity: 100});
+				$('#'+counter[1].id).animate({opacity: 100});
+				counter=[];
+				matches++;
+				if (matches == 10){
+					alert("You win!");
+					matches=0;
+				}
+			} else {
+				$('#'+counter[0].id).animate({opacity: 0});
+				$('#'+counter[1].id).animate({opacity: 0});
+				counter=[];
 			}
 		})
 
