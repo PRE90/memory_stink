@@ -2,9 +2,13 @@ body {
 	background-color: black;
 }
 
-h1 {
+h1, h6 {
 	color: white;
 	text-align: center;
+}
+
+h6:hover {
+	color: gray;
 }
 
 img {
@@ -15,25 +19,34 @@ img {
     min-width: 100%;
 }
 
+
 .row {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .row-centered {
     text-align:center;
 }
 
 .col-centered {
-    display:inline-block;
-    float:none;
-    text-align:left;
-    margin-right:-4px;
+    display: inline-block;
+    float: none;
 }
 
 .col-xs-2 {
 	width: 18vw;
-	height: 23vh;
+	height: 22vh;
     overflow: hidden;
     margin: 0px;
     padding: 0px;
+    border-color: white;
+    border-style: outset;
+    border-width: 1px;
+}
+
+.col-xs-2:hover {
+	border-color: gray;
+	border-style: inset;
+	border-width: 1px;
 }
