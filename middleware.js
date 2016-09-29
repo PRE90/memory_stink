@@ -1,4 +1,3 @@
-
 var middleware = {
 	getUsername: function(req, res, next){
 		console.log('Whats your name?');
