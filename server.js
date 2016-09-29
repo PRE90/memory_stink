@@ -3,10 +3,9 @@ var session = require('express-session');
 var bodyParser = require('body-parser');
 var middleware = require('./middleware.js');
 var app = express();
-var PORT = 8080;
+var PORT = process.env.PORT || 8080;
 
-
-app.use(middleware.getUsername)
+app.use(middleware.getUsername);
 
 app.use(express.static(__dirname+'/public'));
 

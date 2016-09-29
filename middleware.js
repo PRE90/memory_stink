@@ -4,7 +4,7 @@ var middleware = {
 		console.log('Whats your name?');
 		console.log(req);
 		next();
-	};
-};
+	}
+}
 
 module.exports = middleware;
