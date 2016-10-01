@@ -2,6 +2,7 @@ var Sequelize = require('sequelize');
 var env = process.env.NODE_ENV || 'development';
 var sequelize;
 
+// Conditional to handle heroku deployment
 if (env === 'production') {
 	sequelize = new Sequelize(process.env.DATABASE_URL, {
 		dialect: 'postgres'
@@ -15,9 +16,8 @@ if (env === 'production') {
 
 var db = {};
 
-db.score = sequelize.import(__direname + '/models/scores.js');
+db.score = sequelize.import(__dirname + '/models/score.js');
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
 
 module.exports = db;

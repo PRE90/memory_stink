@@ -2,7 +2,7 @@ body {
 	background-color: #1F2629;
 }
 
-h1, h6 {
+h1 {
 	color: white;
 	text-align: center;
 }
@@ -28,14 +28,25 @@ img {
     min-width: 100%;
 }
 
+button {
+	color: #FE6B88;
+	background-color: #1F2629;
+	margin-left: auto;
+}
+
+input {
+	margin: auto;
+	width: 24vw;
+}
+
 .row {
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 1000px;
+	max-width: 1200px;
 }
 
 .row-centered {
-    text-align:center;
+    text-align: center;
 }
 
 .col-centered {
@@ -58,4 +69,8 @@ img {
 	border-color: #FE6B88;
 	border-style: solid;
 	border-width: 2px;
+}
+
+#input {
+	display: none;
 }
